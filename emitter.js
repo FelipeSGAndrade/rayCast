@@ -11,7 +11,7 @@ class Emitter {
 
     this.position = createVector(width / 2, height / 2)
     this.rays = []
-    for (let angle = 0; angle < 360; angle += 1) {
+    for (let angle = 0; angle < 360; angle += 0.5) {
       this.rays.push(new Ray(this.position, radians(angle), this.color))
     }
   }
@@ -22,14 +22,12 @@ class Emitter {
     this.xoffset += 0.01
     this.yoffset += 0.01
 
-    this.position = createVector(x, y)
-    for(let ray of this.rays) {
-      ray.updatePosition(x, y)
-    }
+    this.position.set(x, y)
   }
 
   update() {
     fill(this.color.r, this.color.g, this.color.b)
+    stroke(this.color.r, this.color.g, this.color.b)
     ellipse(this.position.x, this.position.y, 16)
 
     this.updatePosition()

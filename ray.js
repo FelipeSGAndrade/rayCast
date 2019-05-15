@@ -12,10 +12,6 @@ class Ray {
     this.direction.normalize();
   }
 
-  updatePosition(x ,y) {
-    this.position = createVector(x, y)
-  }
-
   cast() {
     let closestPoint
     let closestDistance = Infinity
