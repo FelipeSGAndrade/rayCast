@@ -11,7 +11,7 @@ class Emitter {
 
     this.position = createVector(width / 2, height / 2)
     this.rays = []
-    for (let angle = 0; angle < 360; angle += 0.5) {
+    for (let angle = 0; angle < 360; angle += 360/nRays) {
       this.rays.push(new Ray(this.position, radians(angle), this.color))
     }
   }

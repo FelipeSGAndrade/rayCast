@@ -1,10 +1,14 @@
+const nObstacles = 5
+const nEmitters = 3
+const nRays = 720
+
 const obstacles = []
 const emitters = []
 
 function setup() {
   createCanvas(640, 480)
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < nObstacles; i++) {
     const x1 = random(width)
     const x2 = random(width)
     const y1 = random(height)
@@ -12,7 +16,7 @@ function setup() {
     obstacles.push(new Obstacle(createVector(x1, y1), createVector(x2, y2)))
   }
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < nEmitters; i++) {
     emitters.push(new Emitter())
   }
 }
